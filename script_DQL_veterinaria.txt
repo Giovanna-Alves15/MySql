@@ -1,0 +1,29 @@
+SELECT SUM(preco) as TotalCastracao FROM consulta_agenda WHERE diagnostico LIKE '%castracao%'
+SELECT avg(c.preco) as Média, a.especie FROM consulta_agenda as c, animal as a WHERE 
+a.codAnimal = c.codAnimal and a.especie like '%cachorr%'
+SELECT MIN(preco) as MenorConsulta FROM consulta_agenda WHERE 
+year(data)=2020
+SELECT v.nome, c.data,c.diagnostico FROM veterinario as v, consulta_agenda as c WHERE v.codVet=c.codVet
+SELECT d.nome, d.cidade, a.nome, a.especie, a.raca from dono as d, animal as a 
+WHERE d.codDono=a.codDono and a.especie like '%gat%'
+SELECT a.nome, a.especie, c.diagnostico, c.data, c.preco  from consulta_agenda as c, animal as a 
+WHERE c.codAnimal=a.codAnimal and a.especie like '%cachorr%' 
+ORDER by c.preco DESC
+SELECT d.nome, a.nome, a.especie, c.diagnostico, c.data, c.preco  from dono as d, consulta_agenda as c, animal as a 
+WHERE c.codAnimal=a.codAnimal and d.codDono=a.codDono and a.especie like '%cachorr%' 
+ORDER by c.preco DESC
+SELECT d.nome, a.nome, a.especie,  v.nome, c.diagnostico, c.data
+from dono as d, animal as a, veterinario as v, consulta_agenda as c
+WHERE d.codDono=a.codDono and c.codVet=v.codVet and c.codAnimal=a.codAnimal
+SELECT a.nome, a.raca, a.especie, c.diagnostico, c.data from animal as a, consulta_agenda as c
+WHERE a.codAnimal=c.codAnimal and year(data)=2020 and diagnostico like '%vacina%'
+SELECT d.nome, a.raca, a.especie, a.nome, c.diagnostico, c.preco from dono as d, animal as a, consulta_agenda as c 
+WHERE d.codDono=a.codDono and a.codAnimal=c.codAnimal and preco>100
+SELECT a.nome, a.raca, a.especie, d.nome, d.cidade from animal as a, dono as d 
+WHERE a.codDono=d.codDono and cidade like '%Ribeirão%'
+SELECT a.nome, c.data, c.diagnostico FROM atendente as a, consulta_agenda as c 
+WHERE a.codAtendente=c.codAtendente and year(data)=2019 and diagnostico like '%pneumo%'
+SELECT max(preco) as MenorConsulta FROM consulta_agenda WHERE 
+year(data)=2020
+SELECT a.especie, a.raca, a.nome, c.diagnostico, c.preco from animal as a, consulta_agenda as c 
+WHERE a.codAnimal=c.codAnimal and especie like '%gato%' and preco>200 and preco<400
