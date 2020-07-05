@@ -1,0 +1,21 @@
+DQL
+SELECT nome, dataNascimento from aluno where nome like 'J%';
+SELECT nome, email, dataNascimento, telcel  from aluno where month(dataNascimento)='12';
+SELECT nome, email, dataNascimento from aluno where year(dataNascimento)='2000';
+SELECT * FROM `aluno` order by turma DESC;
+SELECT titulo, autor, genero from livro where genero ='ficção';
+SELECT count(*) from livro
+SELECT titulo, autor, genero from livro where autor='michelle obama';
+SELECT codlivro, codfuncionario, ra from emprestimo_devolucao where month(data_emprestimo)='06';
+SELECT data_emprestimo, data_devolucao, ra from `emprestimo_devolucao` where data_emprestimo BETWEEN '2019-01-01'and '2020-12-31'
+SELECT uf, cidade, cpf, nome, email from bibliotecario where cidade='maua'
+SELECT * FROM `bibliotecario` order by nome
+SELECT * FROM `livro` order by genero
+SELECT titulo, editora, genero, autor from livro where editora like '%globo%'
+SELECT titulo, autor, genero, pag from livro where autor='hal elrod' or genero like '%autoajuda%' and pag<300;
+SELECT titulo, autor, genero, pag from livro where titulo like '%a%' and genero like '%autoajuda%'
+SELECT avg (pag) from livro;
+SELECT sum(pag) from livro
+SELECT min(pag) from livro
+SELECT max(pag) from livro
+SELECT autor, titulo, genero, qtdeExemplares from livro where qtdeExemplares BETWEEN 100 and 400

@@ -1,0 +1,51 @@
+DDL
+create database biblioteca;
+
+use biblioteca;
+
+CREATE TABLE livro (
+codlivro int PRIMARY KEY auto_increment,
+titulo varchar(200),
+autor varchar(200),
+genero varchar(200),
+editora varchar(200)
+);
+
+CREATE TABLE bibliotecario (
+uf char(2),
+complemento varchar(200),
+bairro varchar(200),
+cidade varchar(200),
+num int,
+logradouro varchar(200),
+CEP varchar(200),
+email varchar(200),
+nome varchar(200),
+dataNascimento date,
+RG varchar(200) unique,
+cpf varchar(200) unique,
+telefone varchar(15),
+codfuncionario int PRIMARY KEY auto_increment
+);
+
+CREATE TABLE aluno (
+telcel varchar(15),
+nome varchar(200),
+dataNascimento date,
+turma varchar(200),
+email varchar(200) unique,
+telfixo varchar(15),
+ra int PRIMARY KEY auto_increment
+);
+
+CREATE TABLE emprestimo_devolucao (
+data_devolucao date,
+data_emprestimo date,
+codEmprestimo int PRIMARY KEY auto_increment,
+codlivro int,
+codfuncionario int,
+ra int,
+FOREIGN KEY(codlivro) REFERENCES livro (codlivro),
+FOREIGN KEY(codfuncionario) REFERENCES bibliotecario (codfuncionario),
+FOREIGN KEY(ra) REFERENCES aluno (ra)
+);

@@ -1,0 +1,55 @@
+DML
+insert into aluno (nome,turma,telfixo,email,dataNascimento) values
+    ('Juliana Maria','3F','11-31551-2222','ju.maria@gmail.com','2000-05-15'),
+    ('João Eduardo','2B','11-33333-3333','joao.duardo@gmail.com','2005-08-06'),
+    ('Jaqueline Nobrega','3C','11-44444-4444','jaq.nobrega@gmail.com','2003-06-18'),
+    ('Luca Miranda','1I','11-55555-5555','lu.miranda@gmail.com','2000-12-30'),
+    ('Harley Julius','2F','11-66666-6666','harley.ju0520@gmail.com','2003-05-20'),
+    ('Julio Pereira','1D','11-77777-7777','ju-o.pereira@gmail.com','2002-10-24'),
+    ('Gabriel Alves','2G','11-88888-8888','biel-alves@gmail.com','2004-09-31'),
+    ('Caio Lunarde','3H','11-24557-3518','caio.lunarde@gmail.com','2006-01-26'),
+    ('Maria Domingos','1C','11-24575-3518','maria,dom@gmail.com','2006-12-26'),
+    ('Live Gutierrez','2A','11-24485-6596','live.guti@gmail.com','2005-11-08');
+    
+insert into bibliotecario (nome, telefone, email,dataNascimento, cpf, cidade,uf) VALUES
+    ('Paulo cesar','11-35453-3546','paulo-ce@gmail.com','1995/08/09','111.111.1111-65','Santo André','SP'),
+    ('Paloma Andrade','11-5355-35432','loma.dede@gmail.com','1992/12/15','222.222.2222-98','Maua','SP'),
+    ('Michelle Winchester','11-2543-35435','le-winchester@gmail.com','1996/03/24','333.333.3333-32','Rio Grande da Serra','SP');
+    
+insert into livro (titulo, genero, editora,autor) VALUES
+('O Milagre da Manhã','autoajuda','BestSeller','Hal Elrod'),
+('A Garota do Lago','ficção','Faro Editorial','Charllie Donlea'),
+('A Lenda do Zap','infantojuvenil','Astral Cultura','Enaldinho'),
+('Me Poupe','negócios','Sextante','Nathalia Arcuri'),
+('Escravidão','não-ficção','Globo Livros','Laurentino Gomes'),
+('O Conto da Aia','ficção','Rocco','Margaret Atwood'),
+('Pai Rico, Pai Pobre','negócios','Alta Books','Robert T. Kiyosaki'),
+('Ansiedade','autoajuda','Saraiva','Augusto Cury'),
+('A Cinco Passos de Você','infantojuvenil','Globo','Rachel Lippincott'),
+('Minha História','não-ficção','Objetiva','Michelle Obama');
+
+INSERT into emprestimo_devolucao (codfuncionario, codlivro, ra, data_emprestimo, data_devolucao) VALUES
+(2,10,1,'2020/10/20','2020/11/22'),
+(1,8,3,'2020/08/16','2020/09/18'),
+(3,6,5,'2020/06/12','2020/07/14'),
+(1,4,7,'2020/04/08','2020/05/10'),
+(3,2,9,'2020/02/04','2020/03/09'),
+(2,9,2,'2020/09/18','2020/10/20'),
+(3,7,4,'2020/07/14','2020/08/16'),
+(1,5,6,'2020/05/10','2020/06/12'),
+(2,3,8,'2020/03/09','2020/04/08'),
+(1,1,10,'2020/11/03','2020/11/30');
+
+alter table livro add column qtdeExemplares int;
+alter table livro add column pag int;
+
+UPDATE livro set pag = 196, qtdeExemplares= 725 where codlivro= 1;
+UPDATE livro set pag = 296, qtdeExemplares= 810 where codlivro= 2;
+UPDATE livro set pag = 160, qtdeExemplares= 400 where codlivro= 3;
+UPDATE livro set pag = 176, qtdeExemplares= 200 where codlivro= 4;
+UPDATE livro set pag = 473, qtdeExemplares= 100 where codlivro= 5;
+UPDATE livro set pag = 368, qtdeExemplares= 100 where codlivro= 6;
+UPDATE livro set pag = 336, qtdeExemplares= 300 where codlivro= 7;
+UPDATE livro set pag = 160, qtdeExemplares= 300 where codlivro= 8;
+UPDATE livro set pag = 288, qtdeExemplares= 495 where codlivro= 9;
+UPDATE livro set pag = 464, qtdeExemplares= 100 where codlivro= 10;
